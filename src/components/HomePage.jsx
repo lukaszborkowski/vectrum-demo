@@ -51,7 +51,7 @@ export const HomePage = () => {
               <div className="flex justify-center mt-8 lg:mt-16 space-x-4">
                 <a
                   // href="https://form.ketovibe.co/keto-vibe-woman"
-                  href={`https://form.ketovibe.co/keto-vibe-woman${window.location.search}`}
+                  href={`https://form.ketovibe.co/keto-vibe-woman${window?.location?.search}`}
                   title="Kobieta"
                   className="button-shadow inline-flex items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-400 focus:bg-yellow-400"
                   role="button"
@@ -66,7 +66,7 @@ export const HomePage = () => {
                 </a>
 
                 <a
-                  href={`https://form.ketovibe.co/keto-vibe-man${window.location.search}`}
+                  href={`https://form.ketovibe.co/keto-vibe-man${window?.location?.search}`}
                   title="Mężczyzna"
                   className="button-shadow inline-flex items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-400 focus:bg-yellow-400"
                   role="button"
