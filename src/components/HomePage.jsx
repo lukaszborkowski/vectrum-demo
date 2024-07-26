@@ -89,7 +89,7 @@ export const HomePage = () => {
                 przez naszych ekspertów.
               </h3>
               <div className="mx-auto max-w-3xl pt-16">
-                <img src="/bg_10.png" alt="KetoVibe Image 2" />
+                <img src="/bg_14.png" alt="KetoVibe Image 2" />
               </div>
 
               <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
