@@ -50,7 +50,8 @@ export const HomePage = () => {
 
               <div className="flex justify-center mt-8 lg:mt-16 space-x-4">
                 <a
-                  href="https://form.ketovibe.co/keto-vibe-woman"
+                  // href="https://form.ketovibe.co/keto-vibe-woman"
+                  href={`https://form.ketovibe.co/keto-vibe-woman${window.location.search}`}
                   title="Kobieta"
                   className="button-shadow inline-flex items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-400 focus:bg-yellow-400"
                   role="button"
@@ -65,7 +66,7 @@ export const HomePage = () => {
                 </a>
 
                 <a
-                  href="https://form.ketovibe.co/keto-vibe-man"
+                  href={`https://form.ketovibe.co/keto-vibe-man${window.location.search}`}
                   title="Mężczyzna"
                   className="button-shadow inline-flex items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-400 focus:bg-yellow-400"
                   role="button"
@@ -111,7 +112,8 @@ export const HomePage = () => {
               <ul className="space-y-2 mt-8 mx-auto max-w-[800px] text-start">
                 <li className="text-lg">
                   <strong>🍽️ Spersonalizowany plan diety</strong> - Indywidualnie dobrane menu
-                  dostosowane do potrzeb i celów użytkownika, stworzone przez najlepszych dietetyków w kraju.
+                  dostosowane do potrzeb i celów użytkownika, stworzone przez najlepszych dietetyków
+                  w kraju.
                 </li>
                 <li className="text-lg">
                   <strong>📱 Dostęp do aplikacji mobilnej</strong> - Wygodna aplikacja do śledzenia
