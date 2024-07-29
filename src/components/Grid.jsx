@@ -101,6 +101,8 @@ export const Grid = ({ setState, defaultColors }) => {
           </div>
 
 
+          <TiltCard>
+
           <div className="h-48 rounded-2xl  overflow-hidden neumorphism">
             <div
               className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
@@ -114,6 +116,8 @@ export const Grid = ({ setState, defaultColors }) => {
               </p>
             </div>
           </div>
+          </TiltCard>
+
         </div>
 
         <div class=" rounded-2xl  overflow-hidden z-0 neumorphism h-full">

@@ -38,13 +38,13 @@ export const Curtain = () => {
           style={styles.curtain}
         >
           <motion.img
-            src={'/ketovibe-logo.svg'}
+            src={'/logoInno.png'}
             alt="Logo"
             variants={logoVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            style={styles.logo}
+            style={{...styles.logo}}
           />
         </motion.div>
       )}
@@ -66,7 +66,7 @@ const styles = {
     zIndex: 9999,
   },
   logo: {
-    width: '200px', // Rozmiar loga, możesz dostosować
+    width: '300px', // Rozmiar loga, możesz dostosować
     height: 'auto',
   },
 };

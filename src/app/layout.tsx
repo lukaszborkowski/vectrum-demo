@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={helvetica.className} style={{ overflowX: "hidden" }}>
-        {/* <Curtain /> */}
+        <Curtain />
         <Sidebar />
         <Navbar />
         {children}

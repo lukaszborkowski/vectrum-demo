@@ -15,7 +15,7 @@ export const Navbar = () => {
         }}
       >
         <div class="text-xl font-bold text-gray-900">
-          <Image src="/ketovibe-logo.svg" alt="Logo" width={120} height={60} />
+          <Image src="/logoInno.png" alt="Logo" width={180} height={60} />
         </div>
         <div class="block">
           <a

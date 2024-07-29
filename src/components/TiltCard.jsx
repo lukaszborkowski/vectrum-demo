@@ -3,8 +3,8 @@ import React, { useRef, useEffect } from 'react';
 const tiltEffectSettings = {
   max: 25, // max tilt rotation (degrees)
   perspective: 1000, // transform perspective (pixels)
-  scale: 1.1, // transform scale
-  speed: 500, // speed of the enter/exit transition (milliseconds)
+  scale: 1.07, // transform scale
+  speed: 2500, // speed of the enter/exit transition (milliseconds)
   easing: "cubic-bezier(.03,.98,.52,.99)" // easing of the enter/exit transition
 };
 
@@ -21,6 +21,7 @@ const TiltCard = ({ backgroundColor, children }) => {
     const rotateX = (tiltEffectSettings.max * mouseY) / (rect.height / 2);
     const rotateY = (-tiltEffectSettings.max * mouseX) / (rect.width / 2);
 
+    setTransition(card); // Ensure transition is set
     card.style.transform = `
       perspective(${tiltEffectSettings.perspective}px) 
       rotateX(${rotateX}deg) 
@@ -31,13 +32,13 @@ const TiltCard = ({ backgroundColor, children }) => {
 
   const handleMouseLeave = () => {
     const card = cardRef.current;
+    setTransition(card);
     card.style.transform = `
       perspective(${tiltEffectSettings.perspective}px) 
       rotateX(0deg) 
       rotateY(0deg) 
       scale3d(1, 1, 1)
     `;
-    setTransition(card);
   };
 
   const setTransition = (card) => {
@@ -50,6 +51,7 @@ const TiltCard = ({ backgroundColor, children }) => {
 
   useEffect(() => {
     const card = cardRef.current;
+    setTransition(card); // Set initial transition
     card.addEventListener("mousemove", handleMouseMove);
     card.addEventListener("mouseleave", handleMouseLeave);
 
@@ -65,7 +67,7 @@ const TiltCard = ({ backgroundColor, children }) => {
       className="w-full h-full z-10"
       style={{ backgroundColor }}
     >
-      {children} 
+      {children}
     </div>
   );
 };
