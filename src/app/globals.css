@@ -17,7 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(29, 29, 31);
   background: "white";
 }
 
@@ -39,6 +39,24 @@ body {
   }
 }
 
-.button-shadow {
-  animation: shadow-pulse 2s infinite;
+
+.neumorphism {
+  border: 1px solid #bbb9b95d;
+  background: white;
+  box-shadow: 1px 1px 15px #d6d6d6;
+  filter: grayscale(20%);
 }
+
+.neumorphism:hover {
+  filter: grayscale(0%);
+transition: all 0.5s;
+  /* box-shadow: 4px 4px 10px #bebebe, -4px -4px 10px #ffffff; */
+}
+
+.neumorphism:active {
+  /* box-shadow: inset 4px 4px 10px #bebebe, inset -4px -4px 10px #ffffff; */
+}
+
+/* .button-shadow {
+  animation: shadow-pulse 2s infinite;
+} */

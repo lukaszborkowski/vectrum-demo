@@ -1,269 +1,259 @@
-"use client"
-import React, { useEffect, useState } from "react";
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Grid } from "./Grid";
+import { AnimatedSpan } from "./AnimatedSpan";
+import { TestimonialRow } from "./TestimonialRow";
+import TiltCard from "./TiltCard";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const defaultColors = {
+  bgGradientColor: ["#0065E9", "purple"],
+};
 
 export const HomePage = () => {
-  const [searchParams, setSearchParams] = useState('');
+  const [state, setS] = useState({
+    bgGradientColor: ["#0065E9", "purple"],
+  });
+  const setState = (newState) => {
+    setS((prev) => ({ ...prev, ...newState }));
+  };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const currentSearchParams = window.location.search;
-      setSearchParams(currentSearchParams);
-    }
+    gsap.to(".zoom-image", {
+      scale: 1.1,
+      scrollTrigger: {
+        trigger: ".zoom-image",
+        start: "top 50%",
+        end: "bottom",
+        scrub: true,
+      },
+    });
+
+    gsap.to(".zoom-image", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".zoom-image",
+        start: "top 5%",
+        end: "bottom 0%",
+        scrub: true,
+      },
+    });
   }, []);
 
+  useEffect(() => {
+    gsap.to("#section1", {
+      paddingTop: "0px",
+      scrollTrigger: {
+        // trigger: ".section-blur",
+        start: "top 100%",
+        end: "bottom 0%",
+        scrub: true,
+      },
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   gsap.to("#section1-inside", {
+  //     paddingTop: "0px",
+  //     scrollTrigger: {
+  //       start: "top 50%",
+  //       end: "bottom 0%",
+  //       scrub: true,
+  //     },
+  //   });
+  // }, []);
+
+  // useEffect(() => {
+  //   gsap.to("#bg-gradient-shape-1", {
+  //     y: "-100vh", // przesuwa w górę o wysokość viewportu
+  //     scrollTrigger: {
+  //       trigger: "#bg-gradient-shape-1",
+  //       start: "top bottom", // rozpoczyna efekt gdy góra elementu spotyka się z dołem viewportu
+  //       end: "bottom top", // kończy efekt gdy dół elementu spotyka się z górą viewportu
+  //       scrub: true,
+  //     },
+  //   });
+  // }, []);
+
   return (
-    <main
-      className="bg-white overflow-x-hidden min-h-screen relative max-w-[1800px] mx-auto"
-      id="quiz"
-    >
-      <div className="absolute hidden xl:block top-0 left-0">
-        <img src="/bg_1.png" alt="logo" />
-      </div>
-      <div className="absolute top-[50%] left-0">
-        <img src="/bg_4.png" alt="logo" />
-      </div>
-      <div className="absolute top-[10%] right-[-100px]">
-        <img src="/bg_2.png" alt="logo" />
-      </div>
-      <div className="absolute hidden xl:block top-[0%] right-[400px] w-[200px]'">
-        <img src="/bg_3.png" alt="logo" style={{ width: "400px", height: "auto" }} />
-      </div>
-
-      <div className="absolute  hidden xl:block top-[-100px] right-[00px] w-[400px]'">
-        <img src="/bg_6.png" alt="logo" style={{ width: "400px", height: "auto" }} />
-      </div>
-
-      <div className="absolute hidden xl:block bottom-[0px] right-[00px] w-[400px]'">
-        <img src="/bg_12.png" alt="logo" style={{ width: "400px", height: "auto" }} />
-      </div>
-
-      <section className=" bg-white bg-opacity-[0.1] py-10 sm:py-16 lg:py-12">
+    <main className="min-h-screen mx-auto" id="quiz">
+      <div
+        className="absolute inset-x-0 bottom-[60px] -z-10 blur-[70px] transform-gpu overflow-hidden"
+        aria-hidden="true"
+      >
         <div
-          className="relative mt-2 xl:mt-24 px-4 mx-auto max-w-6xl text-center sm:px-6 lg:px-8 shadow-2xl"
+          className="relative left-[calc(50%-4rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[180deg] bg-gradient-to-tr from-[#0065E9] to-[#80dfff] opacity-30 sm:left-[calc(40%-30rem)] sm:w-[72.1875rem]"
           style={{
-            border: "1px solid #cccccc",
-            backdropFilter: "blur(15px) brightness(100%)",
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
+      </div>
+
+      <div
+        id="bg-gradient-shape-1"
+        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true"
+      >
+        <div
+          className="relative right-[0px] aspect-[1155/678] w-[36.125rem]  bg-gradient-to-tr from-[#35b8e3] to-[#0065E9] opacity-30 "
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
+      </div>
+
+      <div
+        id="bg-gradient-shape-2"
+        className="absolute inset-x-0 top-[170%] -z-10 blur-[80px] opacity-50 transform-gpu overflow-hidden"
+        aria-hidden="true"
+      >
+        <div
+          className="relative left-[0px] aspect-[1/1] w-[36.125rem] rotate-[180deg] "
+          style={{
+            background: state.bgGradientColor[0],
+            transition: "background 0.8s",
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
+      </div>
+
+      <div
+        className="absolute w-[1000px]  top-[130%] right-[-700px] -z-10 blur-[90px] transform-gpu overflow-hidden"
+        aria-hidden="true"
+      >
+        <div
+          className="relative opacity-50 right-[0px] aspect-[1/1] h-auto w-full  rotate-[180deg] opacity-1 sm:left-[calc(40%-30rem)] sm:w-[72.1875rem]"
+          style={{
+            background: state.bgGradientColor[0],
+            transition: "background 0.8s",
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
+      </div>
+
+      <div className="absolute top-[500px] left-[50%] translate-x-[-50%]  zoom-image">
+        <img src="/bg_33.webp" alt="logo" />
+      </div>
+
+      <section id="home" className="py-10 sm:py-16 lg:py-12 h-[100vh]">
+        <div
+          className="relative px-4 mx-auto max-w-7xl text-center sm:px-6 lg:px-8"
+          style={{
             borderRadius: "1rem",
             padding: "6rem 2rem",
-            background: "rgba(255, 255, 255, 0.1)",
           }}
         >
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-1">
             <div className="relative">
-              <h1 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-4xl xl:text-5xl">
-                Osiągnij wymarzoną sylwetkę <br /> z KetoVibe.
-              </h1>
-              <p className="mt-4 text-base text-black lg:mt-8 sm:text-xl">
-                Rozwiąż nasz quiz, <br /> aby uzyskać osobisty plan posiłków <br /> i osiągnąć swoje
-                cele wagowe!
-              </p>
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 text-center">
+                <p className="mx-auto -mt-4 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
+                  Welcome to{" "}
+                  <span className="border-b border-dotted border-slate-300">Vectrum Studio</span>
+                </p>
 
-              <div className="flex justify-center mt-8 lg:mt-16 space-x-4">
-                <a
-                  // href="https://form.ketovibe.co/keto-vibe-woman"
-                  href={`https://form.ketovibe.co/keto-vibe-woman${searchParams}`}
-                  title="Kobieta"
-                  className="button-shadow inline-flex items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-400 focus:bg-yellow-400"
-                  role="button"
-                >
-                  <svg viewBox="0 0 24 24" className="h-6 w-6 mr-2">
-                    <path
-                      fill="currentColor"
-                      d="M12,4A6,6 0 0,1 18,10C18,12.97 15.84,15.44 13,15.92V18H15V20H13V22H11V20H9V18H11V15.92C8.16,15.44 6,12.97 6,10A6,6 0 0,1 12,4M12,6A4,4 0 0,0 8,10A4,4 0 0,0 12,14A4,4 0 0,0 16,10A4,4 0 0,0 12,6Z"
-                    />
-                  </svg>
-                  Kobieta
-                </a>
+                <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+                  <span className="inline-block">
+                    <AnimatedSpan> Tworzymy </AnimatedSpan>{" "}
+                    <span
+                      className="relative whitespace-nowrap "
+                      style={{
+                        color: "rgb(110, 110, 115)",
+                      }}
+                    >
+                      {/* <svg
+                        aria-hidden="true"
+                        viewBox="0 0 418 42"
+                        className="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
+                        preserveAspectRatio="none"
+                      >
+                        <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
+                      </svg>{" "} */}
+                      <AnimatedSpan delay={0.5}>nowoczesne</AnimatedSpan>
+                    </span>
+                  </span>{" "}
+                  <span className="inline-block">
+                    <AnimatedSpan delay={1}>strony </AnimatedSpan>{" "}
+                    <AnimatedSpan delay={1.3}>internetowe </AnimatedSpan>{" "}
+                    <AnimatedSpan delay={1}> dla </AnimatedSpan>{" "}
+                    <AnimatedSpan delay={1.3}> Twojego </AnimatedSpan>{" "}
+                    <AnimatedSpan delay={1.3}> biznesu</AnimatedSpan>
+                  </span>
+                </h1>
 
-                <a
-                  href={`https://form.ketovibe.co/keto-vibe-woman${searchParams}`}
-                  title="Mężczyzna"
-                  className="button-shadow inline-flex items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-400 focus:bg-yellow-400"
-                  role="button"
-                >
-                  <svg viewBox="0 0 24 24" className="h-6 w-6 mr-2">
-                    <path
-                      fill="currentColor"
-                      d="M9,9C10.29,9 11.5,9.41 12.47,10.11L17.58,5H13V3H21V11H19V6.41L13.89,11.5C14.59,12.5 15,13.7 15,15A6,6 0 0,1 9,21A6,6 0 0,1 3,15A6,6 0 0,1 9,9M9,11A4,4 0 0,0 5,15A4,4 0 0,0 9,19A4,4 0 0,0 13,15A4,4 0 0,0 9,11Z"
-                    />
-                  </svg>
-                  Mężczyzna
-                </a>
+                <p className="mx-auto mt-9 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
+                  <span className="inline-block">Bring functionalities of other apps</span>
+                  <span className="inline-block">into your Notion workspaces.</span>
+                </p>
+
+                <div className="mt-12 flex flex-col justify-center gap-y-5 sm:mt-10 sm:flex-row sm:gap-y-0 sm:gap-x-6">
+                  <a
+                    className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 animate-fade-in-left"
+                    href="#"
+                  >
+                    <span className="ml-3">Add to Firefox</span>
+                  </a>
+                  <div
+                    className="relative flex flex-1 flex-col items-stretch sm:flex-none"
+                    data-headlessui-state=""
+                  >
+                    <button
+                      className="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300 animate-fade-in-right"
+                      id="headlessui-menu-button-:r4:"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      data-headlessui-state=""
+                      type="button"
+                    >
+                      <span className="ml-3">Download for Mac</span>
+                    </button>
+                  </div>
+                </div>
               </div>
-
-              <div className="mx-auto max-w-3xl pt-16">
-                <img src="/bg_8.png" alt="KetoVibe Image 1" />
-              </div>
-
-              <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
-                Ponad <span className="text-yellow-500">5000 </span>przepisów <br /> stworzonych
-                przez naszych ekspertów.
-              </h3>
-              <div className="mx-auto max-w-3xl pt-16">
-                <img src="/bg_15.png" alt="KetoVibe Image 2" />
-              </div>
-
-              <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
-                Dołącz do <span className="text-yellow-500">1M+ </span> klientów
-                <br /> w Polsce i na całym świecie
-              </h3>
-
-              <a
-                href="#quiz"
-                className="inline-flex mt-8 items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-500 focus:bg-yellow-400"
-                role="button"
-              >
-                Rozpocznij już teraz
-              </a>
-
-              <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
-                Co otrzymujesz?
-              </h3>
-              <ul className="space-y-2 mt-8 mx-auto max-w-[800px] text-start">
-                <li className="text-lg">
-                  <strong>🍽️ Spersonalizowany plan diety</strong> - Indywidualnie dobrane menu
-                  dostosowane do potrzeb i celów użytkownika, stworzone przez najlepszych dietetyków
-                  w kraju.
-                </li>
-                <li className="text-lg">
-                  <strong>📱 Dostęp do aplikacji mobilnej</strong> - Wygodna aplikacja do śledzenia
-                  postępów, przepisów i planu diety.
-                </li>
-                <li className="text-lg">
-                  <strong>💻 Dostęp do aplikacji webowej</strong> - Możliwość korzystania z
-                  aplikacji na komputerze.
-                </li>
-
-                <li className="text-lg">
-                  <strong>📖 Baza przepisów keto</strong> - Szeroka gama przepisów na dania
-                  ketogeniczne, w tym śniadania, obiady, kolacje i przekąski.
-                </li>
-                <li className="text-lg">
-                  <strong>🛒 Lista zakupów</strong> - Automatycznie generowane listy zakupów na
-                  podstawie planu diety.
-                </li>
-                <li className="text-lg">
-                  <strong>🔢 Śledzenie makroskładników</strong> - Narzędzie do monitorowania
-                  spożycia białek, tłuszczów i węglowodanów.
-                </li>
-                <li className="text-lg">
-                  <strong>📊 Śledzenie postępów</strong> - Możliwość rejestrowania wagi, wymiarów i
-                  innych wskaźników zdrowotnych.
-                </li>
-                <li className="text-lg">
-                  <strong>🌐 Społeczność użytkowników</strong> - Dostęp do grup wsparcia i forum,
-                  gdzie można dzielić się doświadczeniami i poradami.
-                </li>
-              </ul>
-
-              <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
-                Zacznij swoją <span className="text-yellow-500">Keto </span> przygodę już dziś!
-              </h3>
-
-              <a
-                href="#quiz"
-                className="inline-flex mt-8 items-center px-6 py-4 font-semibold text-black transition-all duration-200 bg-yellow-400 rounded-full hover:bg-yellow-500 focus:bg-yellow-400"
-                role="button"
-              >
-                Rozpocznij już teraz
-              </a>
-
-              <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
-                Im się udało, Tobie też może
-              </h3>
-              <div className="mx-auto max-w-3xl pt-16">
-                <img src="/bg_13.png" alt="KetoVibe Image 2" />
-              </div>
-
-              <Opinie />
             </div>
           </div>
         </div>
       </section>
-    </main>
-  );
-};
 
-const Opinie = () => {
-  const reviews = [
-    {
-      img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80",
-      name: "Jan K.",
-      stars: 5,
-      text: "Dieta keto zmieniła moje życie. Czuję się pełen energii i schudłem 10 kg w ciągu 2 miesięcy!",
-    },
-    {
-      img: "https://s3.us-west-002.backblazeb2.com/betterme/e4c9e4284cb59e1507604ff73c156597955b3c2bfecc17f78a6e81d0d2732383",
-      name: "Anna B.",
-      stars: 4,
-      text: "Dieta keto pomogła mi poprawić wyniki zdrowotne i poziom cukru we krwi. Polecam każdemu!",
-    },
-    {
-      img: "https://s3.us-west-002.backblazeb2.com/betterme/304f0a8389fefacc82a502375baa6b54346d7b6f4b5332634556d11dcd6fdb0a",
-      name: "Piotr W.",
-      stars: 5,
-      text: "Od kiedy zacząłem dietę keto, nie tylko schudłem, ale również mam lepszą koncentrację i więcej energii.",
-    },
-    {
-      img: "https://unimeal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fkatie.c863b51c.png&w=32&q=75",
-      name: "Katarzyna Z.",
-      stars: 5,
-      text: "Dieta keto jest niesamowita! Czuję się świetnie i moja skóra nigdy nie wyglądała lepiej.",
-    },
-    {
-      img: "https://s3.us-west-002.backblazeb2.com/betterme/0798af1682947a722029f310ecaed7d05ff769fc33038c62a826b00ed3e2a56b",
-      name: "Marek L.",
-      stars: 4,
-      text: "Początki były trudne, ale teraz nie wyobrażam sobie innej diety. Keto jest super!",
-    },
-    {
-      img: "https://s3.us-west-002.backblazeb2.com/betterme/40cead588a75dc060bc0e9aad029eba676dede184b95c26405dd72d8c40fe71f",
-      name: "Magdalena K.",
-      stars: 5,
-      text: "Dzięki diecie keto poprawiłam swoje samopoczucie i wygląd. Czuję się zdrowa i pełna życia.",
-    },
-  ];
-
-  return (
-    <section className="">
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h3 className="mt-4 text-2xl font-bold text-black lg:mt-8 sm:text-3xl xl:text-4xl pt-12 md:pt-32">
-          Przeczytaj opinie naszych klientów
-        </h3>
-
-        <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
-          {reviews.map((review, index) => (
-            <div key={index} className="mb-8 sm:break-inside-avoid">
-              <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 border border-gray-200">
-                <div className="flex  gap-4">
-                  <img alt="" src={review.img} className="size-8 rounded-full object-cover" />
-                  <div>
-                    <div className="flex justify-center gap-0.5 text-green-500">
-                      {[...Array(review.stars)].map((_, starIndex) => (
-                        <svg
-                          key={starIndex}
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <p className="mt-0.5 text-lg text-start font-medium text-gray-900">
-                      {review.name}
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-4 text-start text-gray-700">{review.text}</p>
-              </blockquote>
-            </div>
-          ))}
+      <section
+        // className="section-blur"
+        className="pt-[500px]"
+        id="section1"
+        style={
+          {
+            // height: "100vh",
+            // background: "green",
+          }
+        }
+      >
+        <div
+          id="section1-inside"
+          className="pt-[500px]"
+          style={{
+            backdropFilter: "blur(15px) brightness(100%)",
+            background: "rgba(0, 0, 0, 0.04)",
+            // transform: "translateY(100px)",
+          }}
+        >
+          <Grid setState={setState} defaultColors={defaultColors} />
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section
+        className="py-[500px]"
+        style={{
+          background: "rgba(0, 0, 0, 0.04)",
+        }}
+      >
+        <TestimonialRow />
+      </section>
+    </main>
   );
 };
