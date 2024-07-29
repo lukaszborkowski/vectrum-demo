@@ -31,13 +31,4 @@ body {
 .neumorphism:hover {
   filter: grayscale(0%);
   transition: all 0.5s;
-  /* box-shadow: 4px 4px 10px #bebebe, -4px -4px 10px #ffffff; */
 }
-
-.neumorphism:active {
-  /* box-shadow: inset 4px 4px 10px #bebebe, inset -4px -4px 10px #ffffff; */
-}
-
-/* .button-shadow {
-  animation: shadow-pulse 2s infinite;
-} */

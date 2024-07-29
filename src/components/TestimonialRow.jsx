@@ -2,7 +2,6 @@
 // App.jsx
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import 'tailwindcss/tailwind.css';
 
 const testimonials = [
   "Testimonial 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
