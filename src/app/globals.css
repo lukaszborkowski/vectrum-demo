@@ -21,11 +21,7 @@ body {
   background: "white";
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+
 
 @keyframes shadow-pulse {
   0% {
