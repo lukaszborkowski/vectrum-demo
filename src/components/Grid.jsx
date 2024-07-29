@@ -81,44 +81,42 @@ export const Grid = ({ setState, defaultColors }) => {
       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col space-y-4">
           <div className="flex-1">
+            <TiltCard>
+              <div className="h-48 rounded-2xl  overflow-hidden neumorphism">
+                <div
+                  className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
+                  style={{ backgroundImage: 'url("/bg12.png")' }}
+                  onMouseEnter={() => setState({ bgGradientColor: ["red", "green"] })}
+                  onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
+                >
+                  <h2 class="text-2xl font-bold mb-2">Web Development</h2>
+                  <p class="max-w-[300px] text-gray-600">
+                    Tworzymy nowoczesne i responsywne strony internetowe dostosowane do Twoich
+                    potrzeb.
+                  </p>
+                </div>
+              </div>
+            </TiltCard>
+          </div>
 
           <TiltCard>
             <div className="h-48 rounded-2xl  overflow-hidden neumorphism">
               <div
                 className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
-                style={{ backgroundImage: 'url("/bg12.png")' }}
-                onMouseEnter={() => setState({ bgGradientColor: ["red", "green"] })}
+                style={{ backgroundImage: 'url("/bg12-2.png")' }}
+                onMouseEnter={() => setState({ bgGradientColor: ["green", "green"] })}
                 onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
               >
-                <h2 class="text-2xl font-bold mb-2">Web Development</h2>
-                <p class="max-w-[300px] text-gray-600">
-                  Tworzymy nowoczesne i responsywne strony internetowe dostosowane do Twoich
-                  potrzeb.
+                <h2 className="text-2xl font-bold mb-2">UX/UI Design</h2>
+                <p className="max-w-[300px] text-gray-600">
+                  Projektujemy intuicyjne i przyjazne dla użytkownika interfejsy.
                 </p>
               </div>
             </div>
           </TiltCard>
-          </div>
-
-
-          <TiltCard>
-
-          <div className="h-48 rounded-2xl  overflow-hidden neumorphism">
-            <div
-              className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
-              style={{ backgroundImage: 'url("/bg12-2.png")' }}
-              onMouseEnter={() => setState({ bgGradientColor: ["green", "green"] })}
-              onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
-            >
-              <h2 className="text-2xl font-bold mb-2">UX/UI Design</h2>
-              <p className="max-w-[300px] text-gray-600">
-                Projektujemy intuicyjne i przyjazne dla użytkownika interfejsy.
-              </p>
-            </div>
-          </div>
-          </TiltCard>
-
         </div>
+
+        <TiltCard>
 
         <div class=" rounded-2xl  overflow-hidden z-0 neumorphism h-full">
           <div
@@ -133,6 +131,10 @@ export const Grid = ({ setState, defaultColors }) => {
             </p>
           </div>
         </div>
+        </TiltCard>
+
+
+        <TiltCard>
 
         <div class="h-48 rounded-2xl  overflow-hidden neumorphism">
           <div
@@ -148,6 +150,10 @@ export const Grid = ({ setState, defaultColors }) => {
             </p>
           </div>
         </div>
+        </TiltCard>
+
+
+        <TiltCard>
 
         <div class="h-48 rounded-2xl  overflow-hidden neumorphism">
           <div
@@ -162,6 +168,8 @@ export const Grid = ({ setState, defaultColors }) => {
             </p>
           </div>
         </div>
+        </TiltCard>
+
       </div>
     </div>
   );

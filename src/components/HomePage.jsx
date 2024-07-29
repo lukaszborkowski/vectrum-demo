@@ -14,7 +14,7 @@ const defaultColors = {
   bgGradientColor: ["#58DCCC", "purple"],
 };
 
-const curtainDelay = 1.5
+const curtainDelay = 1.5;
 export const HomePage = () => {
   const [state, setS] = useState({
     bgGradientColor: ["#58DCCC", "purple"],
@@ -41,9 +41,22 @@ export const HomePage = () => {
         start: "top 1%",
         end: "bottom 0%",
         duration: 3,
-                scrub: true,
+        scrub: true,
       },
     });
+
+    gsap.fromTo(
+      ".after-animated-header",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: curtainDelay + 2,
+        stagger: 0.1,
+      }
+    );
   }, []);
 
   useEffect(() => {
@@ -57,7 +70,6 @@ export const HomePage = () => {
       },
     });
   }, []);
-
 
   return (
     <main className="min-h-screen mx-auto" id="quiz">
@@ -148,7 +160,7 @@ export const HomePage = () => {
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-1">
             <div className="relative">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 text-center">
-                <p className="mx-auto -mt-4 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
+                <p className="mx-auto -mt-4 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6 after-animated-header">
                   Welcome to{" "}
                   <span className="border-b border-dotted border-slate-300">Vectrum Studio</span>
                 </p>
@@ -162,25 +174,24 @@ export const HomePage = () => {
                         color: "rgb(110, 110, 115)",
                       }}
                     >
-                     
-                      <AnimatedSpan delay={ curtainDelay + 0.5}>nowoczesne</AnimatedSpan>
+                      <AnimatedSpan delay={curtainDelay + 0.5}>nowoczesne</AnimatedSpan>
                     </span>
                   </span>{" "}
                   <span className="inline-block">
                     <AnimatedSpan delay={curtainDelay + 1}>strony </AnimatedSpan>{" "}
-                    <AnimatedSpan delay={curtainDelay +  1.3}>internetowe </AnimatedSpan>{" "}
+                    <AnimatedSpan delay={curtainDelay + 1.3}>internetowe </AnimatedSpan>{" "}
                     <AnimatedSpan delay={curtainDelay + 1}> dla </AnimatedSpan>{" "}
                     <AnimatedSpan delay={curtainDelay + 1.3}> Twojego </AnimatedSpan>{" "}
                     <AnimatedSpan delay={curtainDelay + 1.3}> biznesu</AnimatedSpan>
                   </span>
                 </h1>
 
-                <p className="mx-auto mt-9 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
+                <p className="after-animated-header mx-auto mt-9 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
                   <span className="inline-block">Bring functionalities of other apps</span>
                   <span className="inline-block">into your Notion workspaces.</span>
                 </p>
 
-                <div className="mt-12 flex flex-col justify-center gap-y-5 sm:mt-10 sm:flex-row sm:gap-y-0 sm:gap-x-6">
+                <div className=" after-animated-header mt-12 flex flex-col justify-center gap-y-5 sm:mt-10 sm:flex-row sm:gap-y-0 sm:gap-x-6">
                   <a
                     className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 animate-fade-in-left"
                     href="#"
@@ -209,14 +220,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section
-        className="pt-[500px]"
-        id="section1"
-        style={
-          {
-          }
-        }
-      >
+      <section className="pt-[500px]" id="section1" style={{}}>
         <div
           id="section1-inside"
           className="pt-[500px]"
