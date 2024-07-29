@@ -23,7 +23,6 @@ body {
 
 .neumorphism {
   border: 1px solid #bbb9b95d;
-  background: white;
   box-shadow: 1px 1px 15px #d6d6d6;
   filter: grayscale(20%);
 }

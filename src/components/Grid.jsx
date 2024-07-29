@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import TiltCard from "./TiltCard";
+import DotGrid from "./DotGrid";
+import TransparentInWrapper from "./TransparentInWrapper";
 
 export const Grid = ({ setState, defaultColors }) => {
   const gridRef = useRef(null);
@@ -82,12 +84,24 @@ export const Grid = ({ setState, defaultColors }) => {
         <div className="flex flex-col space-y-4">
           <div className="flex-1">
             <TiltCard>
-              <div className="h-48 rounded-2xl  overflow-hidden neumorphism">
+              <div
+                onMouseEnter={() => setState({ bgGradientColor: ["red", "green"] })}
+                onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
+                className="relative h-48 rounded-2xl bg-white  neumorphism"
+              >
+                <div className="absolute top-0 left-0 z-0 h-full w-full overflow-hidden">
+                  <TransparentInWrapper>
+                    <DotGrid gridSize={20} color="red" />
+                  </TransparentInWrapper>
+                </div>
+
+                <div className="absolute bottom-0 right-0 z-10 h-[200px] scale-125 ">
+                  <img src="/bg12.png" className="h-full rounded-xl"/>
+                </div>
+
                 <div
                   className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
-                  style={{ backgroundImage: 'url("/bg12.png")' }}
-                  onMouseEnter={() => setState({ bgGradientColor: ["red", "green"] })}
-                  onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
+                  // style={{ backgroundImage: 'url("/bg12.png")' }}
                 >
                   <h2 class="text-2xl font-bold mb-2">Web Development</h2>
                   <p class="max-w-[300px] text-gray-600">
@@ -117,60 +131,58 @@ export const Grid = ({ setState, defaultColors }) => {
         </div>
 
         <TiltCard>
-
-        <div class=" rounded-2xl  overflow-hidden z-0 neumorphism h-full">
-          <div
-            className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
-            style={{ backgroundImage: 'url("/shape1.png")' }}
-            onMouseEnter={() => setState({ bgGradientColor: ["black", "green"] })}
-            onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
-          >
-            <h2 className="text-2xl font-bold mb-2">Mobile Development</h2>
-            <p className="max-w-[300px] text-gray-600">
-              Specjalizujemy się w tworzeniu aplikacji mobilnych na platformy iOS i Android.
-            </p>
+          <div class=" rounded-2xl  overflow-hidden z-0 neumorphism h-full">
+            <div
+              className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
+              style={{ backgroundImage: 'url("/shape1.png")' }}
+              onMouseEnter={() => setState({ bgGradientColor: ["black", "green"] })}
+              onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
+            >
+              <h2 className="text-2xl font-bold mb-2">Mobile Development</h2>
+              <p className="max-w-[300px] text-gray-600">
+                Specjalizujemy się w tworzeniu aplikacji mobilnych na platformy iOS i Android.
+              </p>
+            </div>
           </div>
-        </div>
         </TiltCard>
-
 
         <TiltCard>
-
-        <div class="h-48 rounded-2xl  overflow-hidden neumorphism">
-          <div
-            className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
-            style={{ backgroundImage: 'url("/bg12-1.png")' }}
-            onMouseEnter={() => setState({ bgGradientColor: ["blue", "green"] })}
-            onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
-          >
-            <h2 className="text-2xl font-bold mb-2">SEO Optimization</h2>
-            <p className="max-w-[300px] text-gray-600">
-              Zoptymalizujemy Twoją stronę internetową pod kątem wyszukiwarek, aby zwiększyć jej
-              widoczność.
-            </p>
+          <div class="h-48 rounded-2xl  overflow-hidden neumorphism">
+            <div
+              className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
+              style={{ backgroundImage: 'url("/bg12-1.png")' }}
+              onMouseEnter={() => setState({ bgGradientColor: ["blue", "green"] })}
+              onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
+            >
+              <h2 className="text-2xl font-bold mb-2">SEO Optimization</h2>
+              <p className="max-w-[300px] text-gray-600">
+                Zoptymalizujemy Twoją stronę internetową pod kątem wyszukiwarek, aby zwiększyć jej
+                widoczność.
+              </p>
+            </div>
           </div>
-        </div>
         </TiltCard>
-
 
         <TiltCard>
-
-        <div class="h-48 rounded-2xl  overflow-hidden neumorphism">
-          <div
-            className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
-            style={{ backgroundImage: 'url("/bg12-3.png")' }}
-            onMouseEnter={() => setState({ bgGradientColor: ["yellow", "green"] })}
-            onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
-          >
-            <h2 className="text-2xl font-bold mb-2">E-commerce Solutions</h2>
-            <p className="max-w-[300px] text-gray-600">
-              Oferujemy kompleksowe rozwiązania e-commerce, aby pomóc Ci sprzedawać online.
-            </p>
+          <div class="h-48 rounded-2xl  overflow-hidden neumorphism">
+            <div
+              className="p-6 bg-contain bg-no-repeat bg-right-bottom h-full"
+              style={{ backgroundImage: 'url("/bg12-3.png")' }}
+              onMouseEnter={() => setState({ bgGradientColor: ["yellow", "green"] })}
+              onMouseLeave={() => setState({ bgGradientColor: defaultColors.bgGradientColor })}
+            >
+              <h2 className="text-2xl font-bold mb-2">E-commerce Solutions</h2>
+              <p className="max-w-[300px] text-gray-600">
+                Oferujemy kompleksowe rozwiązania e-commerce, aby pomóc Ci sprzedawać online.
+              </p>
+            </div>
           </div>
-        </div>
         </TiltCard>
-
       </div>
     </div>
   );
+};
+
+const WhiteAlphaCard = () => {
+  return <></>;
 };
