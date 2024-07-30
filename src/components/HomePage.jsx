@@ -11,13 +11,13 @@ import TiltCard from "./TiltCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const defaultColors = {
-  bgGradientColor: ["#58DCCC", "purple"],
+  bgGradientColor: ["white", "purple"],
 };
 
 const curtainDelay = 1.5;
 export const HomePage = () => {
   const [state, setS] = useState({
-    bgGradientColor: ["#58DCCC", "purple"],
+    bgGradientColor: ["white", "purple"],
   });
   const setState = (newState) => {
     setS((prev) => ({ ...prev, ...newState }));
