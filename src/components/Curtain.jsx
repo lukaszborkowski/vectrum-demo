@@ -15,7 +15,7 @@ const logoVariants = {
   exit: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
 };
 
-export const Curtain = () => {
+export const Curtain = ({brand}) => {
   const [showCurtain, setShowCurtain] = useState(true);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export const Curtain = () => {
           style={styles.curtain}
         >
           <motion.img
-            src={'/logoInno.png'}
+            src={brand?.logo ?? '/logoInno.png'}
             alt="Logo"
             variants={logoVariants}
             initial="hidden"

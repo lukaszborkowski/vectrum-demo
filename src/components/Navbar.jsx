@@ -28,11 +28,11 @@ export const Navbar = () => {
       <div
         class="border shadow-sm rounded-full max-w-6xl mx-auto px-4 flex justify-between items-center py-4"
         style={{
-          // backdropFilter: "blur(5px) brightness(100%)",
+          backdropFilter: "blur(10px) brightness(100%)",
           // borderRadius: "2rem",
           overflow: "hidden",
           padding: "1rem 1rem 1rem 2rem",
-          background: "rgba(255, 255, 255, 0.8)",
+          background: "rgba(255, 255, 255, 1)",
         }}
       >
         <div class="text-xl font-bold text-gray-900">

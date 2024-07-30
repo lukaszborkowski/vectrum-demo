@@ -26,7 +26,7 @@ const DotGrid = ({ color = 'lime', dotSize = 3, gridX = 50, gridY = 20, activePe
             height: dotSize,
             borderRadius: '50%',
             backgroundColor: activeDots.includes(index) ? color : 'rgba(128, 128, 128, 0.2)',
-            boxShadow: activeDots.includes(index) ? `0 0 10px ${color}, 0 0 20px ${color}` : 'none',
+            // boxShadow: activeDots.includes(index) ? `5px 5px 10px ${color}, 5px 5px 20px ${color}` : 'none',
             transition: 'background-color 1s, box-shadow 1s',
           }}
         />

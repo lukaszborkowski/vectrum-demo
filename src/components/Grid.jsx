@@ -137,17 +137,18 @@ export const Grid = ({ setState, defaultColors }) => {
   );
 };
 
-const WhiteAlphaCard = ({
+export const WhiteAlphaCard = ({
   image,
   onMouseEnter,
   onMouseLeave,
   primaryColor,
   title,
   description,
+  tag,
 }) => {
   return (
     <TiltCard
-      rightElement={<img src={image} className="h-full rounded-xl" />}
+      rightElement={<img src={image} className="h-full rounded-xl " />}
       topElement={
         <div
           onMouseEnter={onMouseEnter}
@@ -158,6 +159,7 @@ const WhiteAlphaCard = ({
             background: "rgba(0, 0, 0, 0.001)",
           }}
         >
+          {tag}
           <h2 class="text-2xl font-bold mb-2">{title}</h2>
           <p class="max-w-[300px] text-gray-600">{description}</p>
         </div>
@@ -166,7 +168,7 @@ const WhiteAlphaCard = ({
       <div
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className="relative h-full rounded-2xl bg-white  neumorphism"
+        className="relative h-full rounded-2xl bg-white  neumorphism "
       >
         <div className="absolute top-0 left-0 z-0 h-full w-full overflow-hidden">
           <TransparentInWrapper>

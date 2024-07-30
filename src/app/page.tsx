@@ -1,20 +1,45 @@
+"use client";
 import Image from "next/image";
 import { HomePage } from "@/components/HomePage";
+import { Navbar } from "@/components/Navbar";
+import { Curtain } from "@/components/Curtain";
+import { Footer } from "@/components/Footer";
+import { Sidebar } from "@/components/Sidebar";
+import { AnimatedSpan } from "@/components/AnimatedSpan";
 
 export default function Home() {
-  return <HomePage />;
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div className="max-w-[600px] mx-auto mt-[300px] text-2xl">
+      <div
+        className="absolute inset-x-0 bottom-[60px] -z-10 blur-[70px] transform-gpu overflow-hidden"
+        aria-hidden="true"
+      >
+        <div
+          className="relative  aspect-[1155/678] w-[56.125rem]  rotate-[180deg] bg-gradient-to-tr from-[#5891dc] to-[#80dfff] opacity-40 "
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
         />
       </div>
-    </main>
+      <span className="inline-block font-bold">
+        <AnimatedSpan delay={0.5}> .Grow </AnimatedSpan>{" "}
+        <AnimatedSpan delay={0.5}> your </AnimatedSpan>{" "}
+        <span className="text-blue-600">
+          <AnimatedSpan delay={1}>memorability</AnimatedSpan>
+        </span>
+      </span>{" "}
+      <span className="block font-bold">
+        <AnimatedSpan delay={1.8}> .Grow </AnimatedSpan>{" "}
+        <AnimatedSpan delay={1.8}> your </AnimatedSpan>{" "}
+        <span className="text-blue-600">
+          <AnimatedSpan delay={2}>business</AnimatedSpan>
+        </span>
+      </span>{" "}
+      <div className="text-xs pt-12">
+        <AnimatedSpan delay={2.6}>by </AnimatedSpan>{" "}
+        <AnimatedSpan delay={2.6}>Vectrum.studio </AnimatedSpan>{" "}
+      </div>
+    </div>
   );
 }

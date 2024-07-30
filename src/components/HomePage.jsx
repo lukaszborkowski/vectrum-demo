@@ -7,6 +7,10 @@ import { Grid } from "./Grid";
 import { AnimatedSpan } from "./AnimatedSpan";
 import { TestimonialRow } from "./TestimonialRow";
 import TiltCard from "./TiltCard";
+import { Navbar } from "@/components/Navbar";
+import { Curtain } from "@/components/Curtain";
+import { Footer } from "@/components/Footer";
+import { Sidebar } from "@/components/Sidebar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,6 +77,10 @@ export const HomePage = () => {
 
   return (
     <main className="min-h-screen mx-auto" id="quiz">
+      <Curtain />
+      <Sidebar />
+      <Navbar />
+
       <div
         className="absolute inset-x-0 bottom-[60px] -z-10 blur-[70px] transform-gpu overflow-hidden"
         aria-hidden="true"

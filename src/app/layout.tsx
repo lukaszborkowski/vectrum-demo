@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Curtain } from "@/components/Curtain";
-import { Footer } from "@/components/Footer";
-import { Sidebar } from "@/components/Sidebar";
+
 import localFont from "next/font/local";
 
 const helvetica = localFont({
@@ -48,8 +45,8 @@ const helvetica = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "KetoVibe",
-  description: "Najlepsze diety ketogeniczne w Polsce",
+  title: "Vectrum",
+  description: "Vectrum is a design system for building modern web applications.",
 };
 
 export default function RootLayout({
@@ -60,9 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={helvetica.className} style={{ overflowX: "hidden" }}>
-        <Curtain />
-        <Sidebar />
-        <Navbar />
+
         {children}
         {/* <Footer /> */}
       </body>

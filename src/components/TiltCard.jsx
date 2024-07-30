@@ -12,16 +12,16 @@ const elementTiltEffectSettings = {
   topElement: {
     max: 10, // max tilt rotation for topElement (degrees)
     scale: 1, // transform scale for topElement
-    translateZ: 50, // translate Z distance for topElement (pixels)
+    translateZ: 70, // translate Z distance for topElement (pixels)
   },
   rightElement: {
     max: 10, // max tilt rotation for rightElement (degrees)
     scale: 1, // transform scale for rightElement
-    translateZ: 50, // translate Z distance for rightElement (pixels)
+    translateZ: 40, // translate Z distance for rightElement (pixels)
   },
 };
 
-const TiltCard = ({ backgroundColor, children, topElement, rightElement }) => {
+const TiltCard = ({ backgroundColor, children, topElement, rightElement, onMouseEnter, onMouseLeave }) => {
   const cardRef = useRef(null);
   const topElementRef = useRef(null);
   const rightElementRef = useRef(null);
@@ -167,9 +167,11 @@ const TiltCard = ({ backgroundColor, children, topElement, rightElement }) => {
       ref={cardRef}
       className="relative w-full h-full z-0 hover:z-10 transition-transform duration-500 ease-in-out"
       style={{ backgroundColor }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {rightElement && (
-        <div ref={rightElementRef} className="absolute inset-y-0 right-0 z-20 pointer-events-none">
+        <div ref={rightElementRef} className="absolute  right-0 bottom-0 z-20 pointer-events-none">
           {rightElement}
         </div>
       )}
