@@ -2,31 +2,15 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import TiltCard from "./TiltCard";
-import DotGrid from "./DotGrid";
-import TransparentInWrapper from "./TransparentInWrapper";
+import TiltCard from "@/components/TiltCard";
+import DotGrid from "@/components/DotGrid";
+import TransparentInWrapper from "@/components/TransparentInWrapper";
 
 export const Grid = ({ setState, defaultColors }) => {
   const gridRef = useRef(null);
   const titleRef = useRef(null);
 
   useEffect(() => {
-    // gsap.fromTo(
-    //   titleRef.current,
-    //   { y: -50 },
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     duration: 1,
-    //     scrollTrigger: {
-    //       trigger: titleRef.current,
-    //       start: "top 90%",
-    //       end: "bottom 80%",
-    //       scrub: true,
-    //     },
-    //   }
-    // );
-
     const elements = gridRef.current.children;
 
     gsap.fromTo(

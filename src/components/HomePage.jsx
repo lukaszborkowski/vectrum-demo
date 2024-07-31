@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { AnimatedSpan } from "@/components/AnimatedSpan";
+import { Curtain } from "@/components/Curtain";
+import { Grid } from "@/components/Grid";
+import { Navbar } from "@/components/Navbar";
+import { Sidebar } from "@/components/Sidebar";
+import { TestimonialRow } from "@/components/TestimonialRow";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Grid } from "./Grid";
-import { AnimatedSpan } from "./AnimatedSpan";
-import { TestimonialRow } from "./TestimonialRow";
-import TiltCard from "./TiltCard";
-import { Navbar } from "@/components/Navbar";
-import { Curtain } from "@/components/Curtain";
-import { Footer } from "@/components/Footer";
-import { Sidebar } from "@/components/Sidebar";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 

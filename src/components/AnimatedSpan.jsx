@@ -25,6 +25,7 @@ export const AnimatedSpan = ({ children, sequential = true, delay = 0 }) => {
           duration: 0.5,
           delay,
           ease: "power2.out",
+          overflow: "visible",
         }
       );
     } else {
@@ -50,7 +51,7 @@ export const AnimatedSpan = ({ children, sequential = true, delay = 0 }) => {
   ));
 
   return (
-    <span ref={spanRef} className="inline-block overflow-hidden opacity-0">
+    <span ref={spanRef} className="inline-block   opacity-0">
       {letters}
     </span>
   );
