@@ -320,14 +320,7 @@ export const WhiteAlphaCard = ({
       }
     >
       <div
-        // onMouseEnter={() => {
-        //   onMouseEnter();
-        //   setHovered(true);
-        // }}
-        // onMouseLeave={() => {
-        //   onMouseLeave();
-        //   setHovered(false);
-        // }}
+       
         className="relative h-full rounded-2xl bg-white  neumorphism "
       >
         <div className="absolute bottom-0 right-0 z-0  max-w-[500px] overflow-hidden">

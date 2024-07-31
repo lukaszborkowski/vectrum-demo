@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 const tiltEffectSettings = {
-  max: 25, // max tilt rotation (degrees)
+  max: 15, // max tilt rotation (degrees)
   perspective: 6000, // transform perspective (pixels)
   scale: 1.07, // transform scale
   speed: 2500, // speed of the enter/exit transition (milliseconds)
@@ -10,12 +10,12 @@ const tiltEffectSettings = {
 
 const elementTiltEffectSettings = {
   topElement: {
-    max: 10, // max tilt rotation for topElement (degrees)
+    max: 5, // max tilt rotation for topElement (degrees)
     scale: 1, // transform scale for topElement
-    translateZ: 70, // translate Z distance for topElement (pixels)
+    translateZ: 40, // translate Z distance for topElement (pixels)
   },
   rightElement: {
-    max: 10, // max tilt rotation for rightElement (degrees)
+    max: 5, // max tilt rotation for rightElement (degrees)
     scale: 1, // transform scale for rightElement
     translateZ: 40, // translate Z distance for rightElement (pixels)
   },
