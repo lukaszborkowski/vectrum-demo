@@ -39,7 +39,7 @@ export const Navbar = ({ brand }) => {
           <img src={brand?.logo} alt="Logo" width={180} height={60} />
         </div>
         <div className="flex space-x-8 pr-12">
-          {brand.navItems.map((item) => (
+          {brand?.navItems.map((item) => (
             <a key={item.href} href={item.href} className="text-gray-600 hover:text-blue-500">
               {item.label}
             </a>
