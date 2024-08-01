@@ -27,7 +27,7 @@ export const Navbar = ({ brand }) => {
       className="after-animated-header fixed w-full top-0 z-10 mt-6"
     >
       <div
-        className="border shadow-sm rounded-full max-w-6xl mx-auto px-4 flex justify-between items-center py-4"
+        className="border shadow-md rounded-full max-w-6xl mx-auto px-4 flex justify-between items-center py-4"
         style={{
           // backdropFilter: "blur(20px) brightness(100%)",
           overflow: "hidden",

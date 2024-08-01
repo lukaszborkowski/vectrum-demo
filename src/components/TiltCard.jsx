@@ -1,12 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-const tiltEffectSettings = {
-  max: 15, // max tilt rotation (degrees)
-  perspective: 6000, // transform perspective (pixels)
-  scale: 1.07, // transform scale
-  speed: 2500, // speed of the enter/exit transition (milliseconds)
-  easing: "cubic-bezier(.03,.98,.52,.99)", // easing of the enter/exit transition
-};
+
 
 const elementTiltEffectSettings = {
   topElement: {
@@ -21,7 +15,16 @@ const elementTiltEffectSettings = {
   },
 };
 
-const TiltCard = ({ backgroundColor, children, topElement, rightElement, onMouseEnter, onMouseLeave }) => {
+const TiltCard = ({ backgroundColor, children, topElement, rightElement, onMouseEnter, onMouseLeave, rightElementPosition, cardScale = 1.07 }) => {
+  
+  const tiltEffectSettings = {
+    max: 15, // max tilt rotation (degrees)
+    perspective: 6000, // transform perspective (pixels)
+    scale: cardScale, // transform scale
+    speed: 2500, // speed of the enter/exit transition (milliseconds)
+    easing: "cubic-bezier(.03,.98,.52,.99)", // easing of the enter/exit transition
+  };
+
   const cardRef = useRef(null);
   const topElementRef = useRef(null);
   const rightElementRef = useRef(null);
@@ -171,7 +174,12 @@ const TiltCard = ({ backgroundColor, children, topElement, rightElement, onMouse
       onMouseLeave={onMouseLeave}
     >
       {rightElement && (
-        <div ref={rightElementRef} className="absolute  right-0 bottom-0 z-20 pointer-events-none">
+        <div ref={rightElementRef} className="absolute  right-0 bottom-0 z-20 pointer-events-none"
+        style={{
+          top: rightElementPosition === "top" ? "0" : "auto",
+          bottom: rightElementPosition === "bottom" ? "0" : "auto",
+        }}
+        >
           {rightElement}
         </div>
       )}

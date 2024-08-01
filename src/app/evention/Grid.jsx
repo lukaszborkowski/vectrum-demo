@@ -10,35 +10,41 @@ export const Grid = ({ defaultColors }) => {
   const gridRef = useRef(null);
   const titleRef = useRef(null);
 
- 
-
   const [state, setS] = useState({
     bgGradientColor: ["white", "purple"],
   });
   const setState = (newState) => {
     setS((prev) => ({ ...prev, ...newState }));
   };
-  const setBgGradientColor = setState
+  const setBgGradientColor = setState;
+
   const elements = [
     {
-      image:
-        "https://cdn.syncguide.app/669833fce3c9078b3358694c/2ef3c1606968157ea81ef77b4c82e73e2407fc54739739eaa46ba22b346782a6",
+      image: "https://evention.pl/wp-content/uploads/2023/07/ksc.png",
       onMouseEnter: () => setBgGradientColor("#B3E634"),
       onMouseLeave: () => setBgGradientColor(null),
-      primaryColor: "#B3E634",
-      title: "Start for Free",
+      primaryColor: "#18AEEF",
+      title: "KSC Forum 2024",
       description: (
         <div>
-          Free first episode from our most popular Become a 3D Illustrator course. Only takes one
-          hour and guides you through the first steps with Blender.
+          <p className="mb-2 font-bold">Hotel Crystal Mountain, Bukowa 19A, 43-460 Wisła</p>
+          6. edycja konferencji skoncentrowanej ściśle na spełnieniu wymogów ustawy o KSC na
+          poziomie danego przedsiębiorstwa i instytucji. Konferencja ma obejmować szerokie spektrum
+          tematów dotyczących ustawy o Krajowym Systemie Cyberbezpieczeństwa – od zagadnień
+          prawnych, poprzez proces wdrożenia, współpracę, budowanie SOC, współpracę między
+          przedsiębiorstwami, kontekst rozporządzeń i towarzyszących aktów regulacyjnych. Planowana
+          liczba uczestników: 120-150 osób. Konferencja zgromadzi CSO, CISO, Dyrektorów
+          bezpieczeństwa/IT, audytorów IT z firm będących operatorami usług krytycznych z sektora
+          utilities oraz największych zakładów przemysłowych, jak również przedstawiciele instytucji
+          administracji publicznej. SZCZEGÓŁY KONFERENCJI
         </div>
       ),
       tag: (
         <div>
           <span
             style={{
-              backgroundColor: "#B3E634",
-              color: "black",
+              backgroundColor: "#18AEEF",
+              color: "white",
               padding: "2px 6px",
               borderRadius: "4px",
               fontWeight: "bold",
@@ -46,66 +52,27 @@ export const Grid = ({ defaultColors }) => {
               fontSize: "0.8em",
             }}
           >
-            Start Here
+            28 sierpnia 2024 - 30 sierpnia 2024
           </span>
         </div>
       ),
     },
     {
-      image:
-        "https://cdn.syncguide.app/669833fce3c9078b3358694c/0173c2437153541c904ad9e4916ea3ac88c680c9f8021caa5dd243492ceb28e9",
+      image: "https://evention.pl/wp-content/uploads/2024/01/aisp2024.jpg",
       onMouseEnter: () => setBgGradientColor("#62E7C2"),
       onMouseLeave: () => setBgGradientColor(null),
-      primaryColor: "#62E7C2",
-      title: "Become a 3D Illustrator",
-      description: (
-        <div>
-          Most effective beginner Blender course on the market. Go from simple cubic design to
-          complex low poly colorful illustrations in 5 episodes and 25+ hours of content. <br />
-          <div style={{ marginTop: "1em" }}>
-            <strong style={{ fontSize: "1.4em" }}>$99</strong> <br />
-            <span style={{ fontSize: "0.8em", color: "grey" }}>final price including TAX</span>
-          </div>
-        </div>
-      ),
-      tag: (
-        <div>
-          <span
-            style={{
-              backgroundColor: "#62E7C2",
-              color: "black",
-              padding: "2px 6px",
-              borderRadius: "4px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              fontSize: "0.8em",
-            }}
-          >
-            Beginner
-          </span>
-        </div>
-      ),
-    },
-    {
-      image:
-        "https://cdn.syncguide.app/669833fce3c9078b3358694c/0d4f515c16f52218ce3c526e751b310e63fafe83287eac40a692a79f92c08044",
-      imgHeight: "400px",
-      onMouseEnter: () => setBgGradientColor("red"),
-      onMouseLeave: () => setBgGradientColor(null),
       primaryColor: "red",
-      title: "Ultimate 3D Bundle",
+      title: "AI Summit Poland 2024",
       description: (
         <div>
-          Get three Polygon Runway courses in a single bundle! Your one stop career-changing course
-          bundle to get from zero to hero in the quickest and most effective way. <br />
-          <div style={{ marginTop: "1em" }}>
-            <span style={{ textDecoration: "line-through", color: "grey" }}>$346</span>{" "}
-            <strong style={{ fontSize: "1.4em" }}>$249</strong> <br />
-            <span style={{ fontSize: "0.8em", color: "grey" }}>final price including TAX</span>
-          </div>
-          <div style={{ marginTop: "1em" }}>
-            <span style={{ color: "green", fontWeight: "bold" }}>SAVE $97</span>
-          </div>
+          Konferencja AI Summit Poland będzie miejscem spotkania całego rynku AI w Polsce.
+          Potrzebujemy lepszej współpracy na poziomie krajowym, doskonalenia kompetencji i
+          lawinowego przyrostu wdrożeń w polskich organizacjach. Nasza konferencja ma pomóc
+          przybliżyć nas do realizacji tych celów – łącząc perspektywę biznesową AI z jej
+          fundamentem technologicznym. Konferencja zgromadzi z jednej strony profesjonalistów i
+          ekspertów zajmujących się rozwiązaniami AI i ML (w ramach 3 ścieżek tematycznych), z
+          drugiej zaś przedstawicieli i menedżerów cyfryzujących się przedsiębiorstw i instytucji
+          państwowych, otwartych na innowacje (w ramach 2 ścieżek).
         </div>
       ),
       tag: (
@@ -121,30 +88,64 @@ export const Grid = ({ defaultColors }) => {
               fontSize: "0.8em",
             }}
           >
-            Bundle
+            9 października 2024 - 10 października 2024
           </span>
         </div>
       ),
     },
     {
-      image:
-        "https://cdn.syncguide.app/669833fce3c9078b3358694c/47a6fee073aa103a95924960453d421b9f92e813ff70a46b05fae9bb963a10c6",
+      image: "https://evention.pl/wp-content/uploads/2023/07/dora-1.png",
+      onMouseEnter: () => setBgGradientColor("red"),
+      onMouseLeave: () => setBgGradientColor(null),
+      primaryColor: "#18AEEF",
+      title: "DORA Forum 2024",
+      description: (
+        <div>
+          <p className="mb-2 font-bold">Sound Garden Hotel ul. Żwirki</p>i Wigury 18, Warszawa,
+          Polska 2. edycja konferencji poświęcona tematyce DORA (Digital Operational Resilience
+          Act). Do regulacji DORA, która z jednej strony stoi na fundamencie cyberodporności (i ma w
+          zamyśle sprawić, by sektor finansowy w Europie był bardziej cyberodporny), a z drugiej
+          stanowi sektorowe dopełnienie NIS2, przygotowują się różne instytucje należące do sektora.
+          Wspólna praca i wymiana doświadczeń to klucz do sprawniejszego i skuteczniejszego
+          przygotowanie się do spełnienia wymogów tej regulacji. Planowana liczba uczestników: 120
+          osób. przedstawicieli rynku finansowego, które będą przedmiotem unijnego rozporządzenia
+          DORA w tym w szczególności dla: CSO/CIO,CISO, CDO, IDO, managerowie działów compliance,
+          ryzyka technologicznego i data governance z instytucji finansowych i podmiotów objętych
+          rozporządzeniem. SZCZEGÓŁY KONFERENCJI
+        </div>
+      ),
+      tag: (
+        <div>
+          <span
+            style={{
+              backgroundColor: "#18AEEF",
+              color: "white",
+              padding: "2px 6px",
+              borderRadius: "4px",
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              fontSize: "0.8em",
+            }}
+          >
+            23 października 2024 - 24 października 2024
+          </span>
+        </div>
+      ),
+    },
+    {
+      image: "https://evention.pl/wp-content/uploads/2022/12/ats.png",
       onMouseEnter: () => setBgGradientColor("#8ac7db"),
       onMouseLeave: () => setBgGradientColor(null),
       primaryColor: "#8ac7db",
-      title: "Arcane House",
+      title: "Advanced Threat Summit 2024",
       description: (
         <div>
-          This new course is designed to teach you all the techniques you need to create stunning 3D
-          environments. This course includes stylized cartoon house modeling, advanced texturing,
-          tree and foliage creation, and detailed lighting lessons in 9+ hours of content. <br />
-          <div style={{ marginTop: "1em" }}>
-            <strong style={{ fontSize: "1.4em" }}>$89</strong> <br />
-            <span style={{ fontSize: "0.8em", color: "grey" }}>final price including TAX</span>
-          </div>
-          <div style={{ marginTop: "1em" }}>
-            <span style={{ color: "red", fontWeight: "bold" }}>NEW</span>
-          </div>
+          <p className="mb-2 font-bold">Hotel Marriott Warszawa</p>
+          11. z cyklu konferencja zbudowana wokół tematyki najpoważniejszych i najbardziej
+          zaawansowanych zagrożeń w Internecie. Konferencja we współorganizacji z ISSA Polska.
+          Planowana liczba uczestników: 500 osób. Konferencja zgromadzi CSO, CISO i Security
+          menedżerów, osoby odpowiedzialne za bezpieczeństwo teleinformatyczne w przedsiębiorstwach
+          różnych branż oraz instytucjach finansowych. SZCZEGÓŁY KONFERENCJI
         </div>
       ),
       tag: (
@@ -160,78 +161,7 @@ export const Grid = ({ defaultColors }) => {
               fontSize: "0.8em",
             }}
           >
-            New Course
-          </span>
-        </div>
-      ),
-    },
-    {
-      image:
-        "https://cdn.syncguide.app/669833fce3c9078b3358694c/8af4004d1656a0f5667a092de1576c5f8596feb602420083ae99325a00c3690e",
-      onMouseEnter: () => setBgGradientColor("#FFCC36"),
-      onMouseLeave: () => setBgGradientColor(null),
-      primaryColor: "#FFCC36",
-      title: "3D Characters and Illustrations",
-      description: (
-        <div>
-          Expand your Blender knowledge and learn to create fully rigged 3D cartoon characters. Dive
-          deeper into 3D techniques and learn to create smooth shaded colorful illustrations, hard
-          surface modeling techniques and get your hands on sculpting. <br />
-          <div style={{ marginTop: "1em" }}>
-            <strong style={{ fontSize: "1.4em" }}>$198</strong> <br />
-            <span style={{ fontSize: "0.8em", color: "grey" }}>final price including TAX</span>
-          </div>
-        </div>
-      ),
-      tag: (
-        <div>
-          <span
-            style={{
-              backgroundColor: "#FFCC36",
-              color: "black",
-              padding: "2px 6px",
-              borderRadius: "4px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              fontSize: "0.8em",
-            }}
-          >
-            Intermediate
-          </span>
-        </div>
-      ),
-    },
-    {
-      image:
-        "https://cdn.syncguide.app/669833fce3c9078b3358694c/4e05276d27dfca0f76a39ef4ad79384912dede2208581bbdb37329c974fe42f4",
-      onMouseEnter: () => setBgGradientColor("#62E7C2"),
-      onMouseLeave: () => setBgGradientColor(null),
-      primaryColor: "#62E7C2",
-      title: "3D Lettering",
-      description: (
-        <div>
-          Unlock your creative potential, learn Blender from scratch and create beautiful 3D type
-          layouts to complement your designs, websites, or social media posts. <br />
-          <div style={{ marginTop: "1em" }}>
-            <strong style={{ fontSize: "1.4em" }}>$49</strong> <br />
-            <span style={{ fontSize: "0.8em", color: "grey" }}>final price including TAX</span>
-          </div>
-        </div>
-      ),
-      tag: (
-        <div>
-          <span
-            style={{
-              backgroundColor: "#62E7C2",
-              color: "black",
-              padding: "2px 6px",
-              borderRadius: "4px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              fontSize: "0.8em",
-            }}
-          >
-            Beginner
+            13 listopada 2024 - 15 listopada 2024
           </span>
         </div>
       ),
@@ -242,10 +172,9 @@ export const Grid = ({ defaultColors }) => {
 
     gsap.fromTo(
       elements,
-      { opacity: 0, y: 100 },
+      { opacity: 0 },
       {
         opacity: 1,
-        y: 0,
         duration: 1,
         stagger: 0.2,
         scrollTrigger: {
@@ -256,23 +185,6 @@ export const Grid = ({ defaultColors }) => {
         },
       }
     );
-    //   gsap.fromTo(
-    //     gridRef.current,
-    //     {  },
-    //     {
-    //       opacity: 1,
-    //       y: 100,
-    //       scale: 0.5,
-    //       duration: 1,
-    //       stagger: 0.2,
-    //       scrollTrigger: {
-    //         trigger: gridRef.current,
-    //         start: "top 50%",
-    //         end: "bottom 15%",
-    //         scrub: true,
-    //       },
-    //     }
-    //   );
   }, []);
 
   return (
@@ -310,29 +222,23 @@ export const Grid = ({ defaultColors }) => {
 
       <div className="max-w-6xl mx-auto px-4 ">
         <h1 ref={titleRef} className="text-4xl font-bold text-center mb-12">
-          Nasze Usługi
+          Wydarzenia
         </h1>
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col space-y-4">
-            <div className="h-[300px] w-full z-10">
-              <WhiteAlphaCard {...elements[0]} />
-            </div>
-
-            <div className="h-[300px] w-full">
-              <WhiteAlphaCard {...elements[1]} />
-            </div>
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-1 gap-4">
+          <div className="h-[400px] w-full z-10">
+            <WhiteAlphaCard {...elements[0]} />
           </div>
 
-          <div className="min-h-[300px]">
+          <div className="h-[400px] w-full">
+            <WhiteAlphaCard {...elements[1]} />
+          </div>
+
+          <div className="h-[500px]">
             <WhiteAlphaCard {...elements[2]} />
           </div>
 
           <div className="h-[440px]">
             <WhiteAlphaCard {...elements[3]} />
-          </div>
-
-          <div className="h-[440px]">
-            <WhiteAlphaCard {...elements[4]} />
           </div>
         </div>
       </div>
@@ -341,63 +247,64 @@ export const Grid = ({ defaultColors }) => {
 };
 
 export const WhiteAlphaCard = ({
-    image,
-    onMouseEnter,
-    onMouseLeave,
-    primaryColor,
-    title,
-    description,
-    tag,
-    imgHeight = "250px",
-  }) => {
-    const [hovered, setHovered] = useState(false);
-  
-    return (
-      <TiltCard
-        onMouseEnter={() => {
-          onMouseEnter();
-          setHovered(true);
-        }}
-        onMouseLeave={() => {
-          onMouseLeave();
-          setHovered(false);
-        }}
-        rightElement={
-          <img
-            style={{
-              height: imgHeight,
-              transform: hovered ? "scale(1.3)" : "scale(1)",
-              transition: "transform 0.4s",
-            }}
-            src={image}
-            className="rounded-xl "
-          />
-        }
-        topElement={
-          <div
-            className="m-1 p-6 rounded-2xl"
-            style={{
-              backdropFilter: "blur(15px) brightness(100%)",
-              background: "rgba(0, 0, 0, 0.001)",
-            }}
-          >
-            {tag && <div class="pb-2">{tag}</div>}
-            <h2 class="text-2xl font-bold mb-2">{title}</h2>
-            <p class="max-w-[300px] text-gray-600">{description}</p>
-          </div>
-        }
-      >
+  image,
+  onMouseEnter,
+  onMouseLeave,
+  primaryColor,
+  title,
+  description,
+  tag,
+  imgHeight = "250px",
+}) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <TiltCard
+      cardScale={1.01}
+      onMouseEnter={() => {
+        onMouseEnter();
+        setHovered(true);
+      }}
+      onMouseLeave={() => {
+        onMouseLeave();
+        setHovered(false);
+      }}
+      rightElementPosition="top"
+      rightElement={
+        <img
+          style={{
+            height: imgHeight,
+            transform: hovered ? "scale(1.3)" : "scale(1)",
+            transition: "transform 0.4s",
+            padding: "15px",
+          }}
+          src={image}
+          className="rounded-xl "
+        />
+      }
+      topElement={
         <div
-         
-          className="relative h-full rounded-2xl bg-white  neumorphism "
+          className="m-1 p-6 rounded-2xl"
+          style={
+            {
+              // backdropFilter: "blur(15px) brightness(100%)",
+              // background: "rgba(0, 0, 0, 0.001)",
+            }
+          }
         >
-          <div className="absolute bottom-0 right-0 z-0  max-w-[500px] overflow-hidden">
-            <TransparentInWrapper>
-              <DotGrid gridSize={20} color={primaryColor} />
-            </TransparentInWrapper>
-          </div>
+          {tag && <div class="pb-2">{tag}</div>}
+          <h2 class="text-2xl font-bold mb-2">{title}</h2>
+          <p class="max-w-[600px] text-gray-600">{description}</p>
         </div>
-      </TiltCard>
-    );
-  };
-  
+      }
+    >
+      <div className="relative h-full rounded-2xl bg-white  neumorphism ">
+        <div className="absolute bottom-0 right-0 z-0  max-w-[500px] overflow-hidden">
+          <TransparentInWrapper>
+            <DotGrid gridSize={20} color={primaryColor} />
+          </TransparentInWrapper>
+        </div>
+      </div>
+    </TiltCard>
+  );
+};

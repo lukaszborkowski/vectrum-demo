@@ -182,7 +182,7 @@ export const Content = () => {
         </div>
       </section>
 
-      <section className="pt-[500px] relative" id="section1" style={{}}>
+      <section className="pt-[300px] relative" id="section1" style={{}}>
         <div
           id="section1-inside"
           className="pt-[500px] pb-[300px]"
