@@ -50,9 +50,10 @@ export const Content = () => {
     ),
     description: "Profesjonalna organizacja konferencji na najwyższym poziomie",
     buttonText: "Poznaj nas bliżej",
-    mainImage:
+    mainImage: 
       "https://cdn.syncguide.app/669833fce3c9078b3358694c/bbbe3895221364c6cc2e5a40012f38a06c5decb0500f81e8080813a7fc78dacc",
-    logo: "https://evention.pl/wp-content/uploads/2016/02/logo_evention_www.png",
+    
+      logo: "https://evention.pl/wp-content/uploads/2016/02/logo_evention_www.png",
     bgGradientColor: ["#18AEEF", "red"],
   };
 
@@ -140,8 +141,8 @@ export const Content = () => {
         />
       </div>
 
-      <div className="absolute top-[600px] left-[50%] translate-x-[-50%]   zoom-image">
-        <img src={brand.mainImage} alt="logo" />
+      <div className="absolute top-[600px] left-[50%] translate-x-[-50%]   ">
+        <img src={brand.mainImage} className="zoom-image" alt="logo" />
       </div>
 
       <section id="home" className="py-10 sm:py-16 lg:py-12 h-[100vh]">
