@@ -141,7 +141,7 @@ export const Content = () => {
         />
       </div>
 
-      <div className="absolute top-[600px] left-[50%] translate-x-[-50%]   ">
+      <div className="absolute top-[600px] left-[50%]  translate-x-[-50%]   ">
         <img src={brand.mainImage} className="zoom-image" alt="logo" />
       </div>
 

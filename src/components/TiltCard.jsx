@@ -168,7 +168,7 @@ const TiltCard = ({ backgroundColor, children, topElement, rightElement, onMouse
   return (
     <div
       ref={cardRef}
-      className="relative w-full h-full z-0 hover:z-10 transition-transform duration-500 ease-in-out"
+      className="relative w-full h-full z-0 hover:z-10 transition-transform duration-500 ease-in-out cursor-pointer"
       style={{ backgroundColor }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
