@@ -1,0 +1,87 @@
+<svg width="267" height="267" viewBox="0 0 267 267" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle id="circle1" cx="50" cy="50" r="30" fill="#3DD2CC">
+    <animate
+      attributeName="cx"
+      from="50" to="130.666"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="cy"
+      from="50" to="13.5733"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="r"
+      from="30" to="0"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+  </circle>
+  <circle id="circle2" cx="100" cy="50" r="30" fill="#3DD2CC">
+    <animate
+      attributeName="cx"
+      from="100" to="230.254"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="cy"
+      from="50" to="81.0266"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="r"
+      from="30" to="0"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+  </circle>
+  <circle id="circle3" cx="150" cy="50" r="30" fill="#3DD2CC">
+    <animate
+      attributeName="cx"
+      from="150" to="90.0401"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="cy"
+      from="50" to="89.9467"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="r"
+      from="30" to="0"
+      begin="0s" dur="2s"
+      fill="freeze"
+    />
+  </circle>
+
+  <path id="path1" d="M130.666 13.5733C149.44 14.1866 167.76 17.6799 183.466 28.5066C197.8 38.3999 208.613 54.9199 212.013 71.9733C214.733 85.3466 211.733 99.2799 203.533 110.2C197.213 118.453 188.813 125.787 179.186 129.867C172.96 132.653 165.613 132.933 159.013 131.6C145.693 127.893 135.026 117.107 127.333 106.04C118.466 92.4399 111.066 78.9466 99.5198 67.1599C90.7198 57.8533 78.4265 50.1733 65.3865 49.4399C55.8665 48.7333 47.1198 51.4533 38.7998 55.8666C60.7065 28.2266 95.5865 12.8533 130.666 13.5733Z" fill="#3DD2CC" visibility="hidden">
+    <animate
+      attributeName="visibility"
+      from="hidden" to="visible"
+      begin="2s" dur="0.1s"
+      fill="freeze"
+    />
+  </path>
+  <path id="path2" d="M230.254 81.0266C231 82.3466 231.747 83.6533 232.494 84.9599C246.84 110.133 250.707 140.627 243.387 168.627C238.267 188.947 227.72 209.853 211.4 223.413C199.667 233.44 184.667 238.547 169.334 239.04C159.534 239.547 149.854 238.147 141.147 233.427C129.774 227.427 121.974 217.093 117.44 205.227C113.667 195.493 111.76 184.613 115.827 174.64C119.694 164.173 129.48 157.133 139.307 152.733C152.56 146.467 165.614 145.027 179.827 141.147C189.827 138.907 199.28 134.64 208.094 129.453C218.534 122.827 227.134 113 229.88 100.707C231.534 94.0666 230.76 87.7466 230.254 81.0266Z" fill="#3DD2CC" visibility="hidden">
+    <animate
+      attributeName="visibility"
+      from="hidden" to="visible"
+      begin="2s" dur="0.1s"
+      fill="freeze"
+    />
+  </path>
+  <path id="path3" d="M90.0401 89.9467C99.5601 93.88 106.933 101.947 109.347 112.04C113.36 127.4 109.107 144.587 104.64 159.44C100.213 172.427 97.7601 186.32 97.8534 200.04C98.0934 213.013 102.587 225.52 112.253 234.4C117.36 239.24 123.387 241.76 129.68 244.587C111.12 245.6 92.4401 241.92 75.6801 233.84C53.3868 223.013 35.1334 205.2 22.8934 183.72C16.6668 172.8 12.8934 160.627 12.8934 148C12.4134 133.867 16.7601 120.147 24.2801 108.267C30.3201 99 38.8934 91.64 49.4401 88.0533C62.4934 83.7467 77.3734 84.7733 90.0401 89.9467Z" fill="#3DD2CC" visibility="hidden">
+    <animate
+      attributeName="visibility"
+      from="hidden" to="visible"
+      begin="2s" dur="0.1s"
+      fill="freeze"
+    />
+  </path>
+</svg>

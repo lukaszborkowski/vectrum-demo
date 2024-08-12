@@ -22,7 +22,9 @@ export default function Home() {
           }}
         />
       </div>
-      <span className="inline-block font-bold">
+      <div className="px-8">
+
+      <span className="inline-block font-bold ">
         <AnimatedSpan delay={0.5}> .Grow </AnimatedSpan>{" "}
         <AnimatedSpan delay={0.5}> your </AnimatedSpan>{" "}
         <span className="text-blue-600">
@@ -40,6 +42,8 @@ export default function Home() {
         <AnimatedSpan delay={2.6}>by </AnimatedSpan>{" "}
         <AnimatedSpan delay={2.6}>Vectrum.studio </AnimatedSpan>{" "}
       </div>
+      </div>
+
     </div>
   );
 }
