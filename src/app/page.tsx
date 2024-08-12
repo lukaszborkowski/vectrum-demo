@@ -39,9 +39,15 @@ export default function Home() {
         </span>
       </span>{" "}
       <div className="text-xs pt-12">
-        <AnimatedSpan delay={2.6}>by </AnimatedSpan>{" "}
-        <AnimatedSpan delay={2.6}>Vectrum.studio </AnimatedSpan>{" "}
+        <a href={"mailto:contact@vectrum.studio"}>
+        <AnimatedSpan delay={2.6}>contact@vectrum.studio </AnimatedSpan>{" "}
+
+        </a>
+        {/* <AnimatedSpan delay={2.6}>Vectrum.studio </AnimatedSpan>{" "} */}
       </div>
+
+   
+
       </div>
 
     </div>
