@@ -16,7 +16,7 @@ const defaultColors = {
   bgGradientColor: ["white", "purple"],
 };
 
-const curtainDelay = 1.5;
+const curtainDelay = 0;
 export const HomePage = () => {
   const [state, setS] = useState({
     bgGradientColor: ["white", "purple"],
@@ -75,7 +75,7 @@ export const HomePage = () => {
 
   return (
     <main className="min-h-screen mx-auto" id="quiz">
-      <Curtain />
+      {/* <Curtain /> */}
       <Sidebar />
       <Navbar />
 
@@ -246,7 +246,7 @@ export const HomePage = () => {
           background: "rgba(0, 0, 0, 0.04)",
         }}
       >
-        <TestimonialRow />
+
       </section>
     </main>
   );
