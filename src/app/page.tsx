@@ -24,14 +24,14 @@ export default function Home() {
         aria-hidden="true"
       >
         <div
-          className="relative  aspect-[1155/678] w-[56.125rem]  rotate-[180deg] bg-gradient-to-tr from-[#5891dc] to-[#80dfff] opacity-40 "
+          className="relative  aspect-[1155/678] w-[56.125rem]  rotate-[180deg] bg-gradient-to-tr from-blue-400 to-blue-300 opacity-40 "
           style={{
             clipPath:
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
         />
       </div>
-      <div className="px-8">
+      <div className="px-8 text-neutral-950">
         <div 
         style={{
           transition: "all 1s",
@@ -42,14 +42,14 @@ export default function Home() {
         <span className="inline-block font-bold ">
           <AnimatedSpan delay={0.5}> .Grow </AnimatedSpan>{" "}
           <AnimatedSpan delay={0.5}> your </AnimatedSpan>{" "}
-          <span className="text-blue-600">
+          <span className="">
             <AnimatedSpan delay={1}>memorability</AnimatedSpan>
           </span>
         </span>{" "}
         <span className="block font-bold">
           <AnimatedSpan delay={1.8}> .Grow </AnimatedSpan>{" "}
           <AnimatedSpan delay={1.8}> your </AnimatedSpan>{" "}
-          <span className="text-blue-600">
+          <span className="">
             <AnimatedSpan delay={2}>business</AnimatedSpan>
           </span>
         </span>{" "}
